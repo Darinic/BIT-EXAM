@@ -1,5 +1,4 @@
 import { database } from "../database/connection.js";
-import { freelancer } from "../database/model/Freelancer.js";
 
 export const getAll = async (conditions = {}) => {
   try {

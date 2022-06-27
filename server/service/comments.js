@@ -1,8 +1,9 @@
 import { database } from "../database/connection.js";
-export const getAll = async (crowdfunderId) => {
+
+export const getAll = async (freelanceId) => {
   try {
-    return await database.Donations.findAll({
-      where: { crowdfunderId },
+    return await database.Comments.findAll({
+      where: { freelanceId },
       raw: true,
     });
   } catch {
@@ -11,7 +12,7 @@ export const getAll = async (crowdfunderId) => {
 };
 export const getById = async (id) => {
   try {
-    return await database.Donations.findByPk(id);
+    return await database.Comments.findByPk(id);
   } catch {
     return false;
   }
@@ -19,9 +20,9 @@ export const getById = async (id) => {
 
 export const insert = async (data) => {
   try {
-    const donations = new database.Donations(data);
-    await donations.save();
-    return donations.dataValues.id;
+    const comments = new database.Comments(data);
+    await comments.save();
+    return comments.dataValues.id;
   } catch (e) {
     console.log(e);
     return false;

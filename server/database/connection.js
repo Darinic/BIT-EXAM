@@ -3,7 +3,7 @@ import mysql from "mysql2/promise";
 import { Sequelize } from "sequelize";
 import { users } from "./model/users.js";
 import { freelancer } from "./model/Freelancer.js";
-// import { donations } from "./model/Donations.js";
+import { comments } from "./model/Comments.js";
 
 const config = await loadJsonFile("./config.json");
 
@@ -25,7 +25,7 @@ try {
 
   database.Users = users(sequelize);
   database.Freelancer = freelancer(sequelize);
-  // database.Donations = donations(sequelize);
+  database.Comments = comments(sequelize);
 
   await sequelize.sync({ alter: true });
 } catch {

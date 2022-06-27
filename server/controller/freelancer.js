@@ -15,7 +15,7 @@ import multer from "multer";
 import { access, mkdir } from "fs/promises";
 import { Op } from "sequelize";
 import auth from "../middleware/authentication.js";
-import { getAll as crowdfunderComments } from "../service/donations.js";
+import { getAll as crowdfunderComments } from "../service/comments.js";
 
 const Router = express.Router();
 

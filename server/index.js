@@ -5,7 +5,7 @@ import auth from "./middleware/authentication.js";
 import { getUser } from "./service/users.js";
 import cookieParser from "cookie-parser";
 import freelancer from './controller/freelancer.js'
-// import donations from "./controller/donations.js";
+import comments from "./controller/comments.js";
 
 const app = express();
 
@@ -20,7 +20,7 @@ app.use(cookieParser());
 app.use("/uploads", express.static("uploads"));
 app.use("/api/users", users);
 app.use("/api/freelancer", freelancer);
-// app.use("/api/donations", donations);
+app.use("/api/comments", comments);
 
 app.get("/checkAuth", auth, async (req, res) => {
   const userData = await getUser(req.authData.id);
