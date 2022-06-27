@@ -39,13 +39,13 @@ export default (props) => {
   //     .get("/api/crowdfunder/comments/" + id)
   //     .then((resp) => {
   //       if (resp.data.status === "success") {
-  //         setDonations(resp.data.message);
+  //         setComments(resp.data.message);
   //       }
   //     })
   //     .catch(() => {
   //       setMessages({ message: "Server side error", status: "danger" });
   //     });
-  // }, [setDonations]);
+  // }, [setComments]);
 
   const CommentList = () => {
     return comments.map((value, index) => {

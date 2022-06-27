@@ -8,7 +8,7 @@ export default (props) => {
   const [comment, setComment] = useState({
     name: "",
     comment: "",
-    CrowdFunderId: props.id,
+    FreelancerId: props.id,
   });
 
   const [commentMessage, setCommentMessage] = useState({
